@@ -9,7 +9,7 @@
 
 Welcome to **2D Champion** - a community-driven platform where gamers play, compete on global leaderboards, and developers collaborate to build amazing 2D games!
 
-🌐 **Live Platform**: [www.2dchampion.com](https://www.2dchampion.com) (Coming Soon!)
+🌐 **Live Platform**: [2d-champion.vercel.app](https://2d-champion.vercel.app)
 
 ## ✨ Features
 
