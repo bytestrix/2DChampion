@@ -92,7 +92,7 @@ npm run dev
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS + Custom CSS
 - **Icons**: Lucide React
@@ -185,7 +185,7 @@ This project is licensed under the **GNU General Public License v3.0** - see the
 - [x] Core platform with authentication
 - [x] Game listing and playing
 - [x] Leaderboard system
-- [ ] User profiles with stats
+- [x] User profiles with stats
 - [ ] Game rating and reviews
 - [ ] Achievements and badges
 - [ ] Multi-player support
