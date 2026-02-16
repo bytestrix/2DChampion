@@ -1,4 +1,6 @@
-![2D Champion](./2dchampion_logo.png)
+<p align="center">
+  <img src="./2dchampion_logo.png" alt="2D Champion" width="400">
+</p>
 
 # 🎮 2D Champion
 
