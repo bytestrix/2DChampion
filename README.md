@@ -1,4 +1,4 @@
-![2D Champion](./2D.png)
+![2D Champion](./2dchampion_logo.png)
 
 # 🎮 2D Champion
 
@@ -42,7 +42,7 @@ Welcome to **2D Champion** - a community-driven platform where gamers play, comp
 
 ```bash
 # Clone the repository
-git clone https://github.com/rishibaghel25/2DChampion.git
+git clone https://github.com/bytestrix/2DChampion.git
 cd 2DChampion
 
 # Install dependencies for the web platform
@@ -115,13 +115,33 @@ We welcome contributions from developers of all skill levels! Here's how you can
 
 ### Contributing a Game
 
-1. **Fork the repository**
-2. **Create a new game folder** in `games/your-game-name/`
-3. **Develop your game** using HTML, CSS, and TypeScript/JavaScript
-4. **Add a README** explaining how to play
-5. **Submit a Pull Request**
+**Important:** Contributors don't need database access! Follow this simple workflow:
 
-See our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
+1. **Propose Your Idea** - Create a [GitHub Issue](https://github.com/bytestrix/2DChampion/issues) describing your game
+2. **Fork the Repository** - Clone and create your game component
+3. **Build Your Game** - Develop in `web/src/components/games/YourGame.tsx`
+   - Use the existing game components as templates
+   - Implement scoring, controls, and game logic
+   - Test locally (game works without database connection)
+4. **Create a PR** - Submit with:
+   - Game component code
+   - Thumbnail image (512x512 PNG)
+   - Instructions on how to play
+   - Any special dependencies
+5. **Maintainers Handle Backend** - We'll register your game in the database and deploy
+
+**You DON'T need:**
+- ❌ Supabase credentials
+- ❌ Database access
+- ❌ Deployment permissions
+
+**Maintainers will:**
+- ✅ Review and test your game
+- ✅ Register it in the platform
+- ✅ Handle database setup
+- ✅ Deploy to production
+
+See [SECURITY.md](SECURITY.md) for more details on the separation between contributors and maintainers.
 
 ### Contributing to the Platform
 
@@ -157,8 +177,8 @@ The following environment variables are **safe to commit** (public):
 ## 🌟 Community
 
 - ⭐ **Star this repo** if you like the project!
-- 🐛 **Report bugs** via [GitHub Issues](https://github.com/rishibaghel25/2DChampion/issues)
-- 💬 **Discussions** on [GitHub Discussions](https://github.com/rishibaghel25/2DChampion/discussions)
+- 🐛 **Report bugs** via [GitHub Issues](https://github.com/bytestrix/2DChampion/issues)
+- 💬 **Discussions** on [GitHub Discussions](https://github.com/bytestrix/2DChampion/discussions)
 - 📢 **Follow updates** on Twitter (coming soon!)
 
 ## 📜 License
@@ -196,8 +216,8 @@ This project is licensed under the **GNU General Public License v3.0** - see the
 
 Have questions or suggestions? Reach out!
 
-- **GitHub**: [@rishibaghel25](https://github.com/rishibaghel25)
-- **Email**: (your-email@example.com)
+- **GitHub**: [@bytestrix](https://github.com/bytestrix)
+- **Email**: bytestrix@gmail.com
 
 ---
 

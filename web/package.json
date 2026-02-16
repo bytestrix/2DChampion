@@ -2,6 +2,15 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bytestrix/2DChampion.git"
+  },
+  "author": "bytestrix <bytestrix@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/bytestrix/2DChampion/issues"
+  },
+  "homepage": "https://github.com/bytestrix/2DChampion#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

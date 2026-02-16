@@ -3,9 +3,10 @@ import { createServerClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { User, Trophy, Calendar, Settings, LogOut } from 'lucide-react'
+import { User, Trophy, Calendar, Settings, LogOut, Upload, Gamepad2 } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import ProfilePictureUpload from '@/components/ProfilePictureUpload'
 
 export default async function ProfilePage() {
     const supabase = await createServerClient()
@@ -49,32 +50,21 @@ export default async function ProfilePage() {
                 <div className="container mx-auto max-w-5xl">
 
                     {/* Profile Header */}
-                    <div className="glass rounded-3xl p-8 sm:p-12 mb-12 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 p-32 bg-purple-500/10 blur-[100px] rounded-full pointer-events-none" />
+                    <div className="glass rounded-3xl p-8 sm:p-12 mb-12 relative overflow-hidden border border-[#ffd700]/10">
+                        <div className="absolute top-0 right-0 p-32 bg-[#ff9500]/10 blur-[100px] rounded-full pointer-events-none" />
 
                         <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
-                            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1">
-                                <div className="w-full h-full rounded-full bg-black overflow-hidden relative">
-                                    {profile?.avatar_url ? (
-                                        <Image
-                                            src={profile.avatar_url}
-                                            alt={profile.username || 'User'}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    ) : (
-                                        <div className="w-full h-full flex items-center justify-center bg-gray-900 text-4xl font-bold text-gray-500">
-                                            {(profile?.username?.[0] || user.email?.[0] || 'U').toUpperCase()}
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
+                            <ProfilePictureUpload
+                                userId={user.id}
+                                currentAvatarUrl={profile?.avatar_url}
+                                username={profile?.username || user.email?.split('@')[0] || 'User'}
+                            />
 
                             <div className="flex-1 text-center md:text-left">
                                 <h1 className="text-3xl md:text-4xl font-black mb-2">
                                     {profile?.display_name || 'Player'}
                                 </h1>
-                                <p className="text-purple-400 font-mono mb-4">
+                                <p className="text-[#ff9500] font-mono mb-4">
                                     @{profile?.username || 'username'}
                                 </p>
                                 <div className="flex flex-wrap justify-center md:justify-start gap-4">
@@ -109,20 +99,23 @@ export default async function ProfilePage() {
                     {/* Stats Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                         <div className="glass p-6 rounded-2xl border border-white/10">
-                            <h3 className="text-gray-400 text-sm font-medium mb-1">Total Games Played</h3>
+                            <h3 className="text-gray-400 text-sm font-medium mb-1">Total Plays</h3>
                             <p className="text-3xl font-black text-white">{totalPlays}</p>
+                            <p className="text-xs text-gray-500 mt-1">Game sessions</p>
                         </div>
                         <div className="glass p-6 rounded-2xl border border-white/10">
                             <h3 className="text-gray-400 text-sm font-medium mb-1">Highest Score</h3>
-                            <p className="text-3xl font-black text-purple-400">
+                            <p className="text-3xl font-black text-[#ffd700]">
                                 {Math.max(...(bestScores?.map(s => s.best_score) || [0])).toLocaleString()}
                             </p>
+                            <p className="text-xs text-gray-500 mt-1">Personal best</p>
                         </div>
                         <div className="glass p-6 rounded-2xl border border-white/10">
-                            <h3 className="text-gray-400 text-sm font-medium mb-1">Games Mastered</h3>
-                            <p className="text-3xl font-black text-pink-500">
+                            <h3 className="text-gray-400 text-sm font-medium mb-1">Unique Games</h3>
+                            <p className="text-3xl font-black text-[#00d4ff]">
                                 {bestScores?.length || 0}
                             </p>
+                            <p className="text-xs text-gray-500 mt-1">Games played</p>
                         </div>
                     </div>
 
@@ -138,10 +131,10 @@ export default async function ProfilePage() {
                                 <Link
                                     key={score.game_id}
                                     href={`/games/${score.games.slug}`}
-                                    className="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-white/10 hover:border-purple-500/50"
+                                    className="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-white/10 hover:border-[#ffd700]/50"
                                 >
                                     <div className="flex items-center space-x-4">
-                                        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-gray-800 to-gray-700 overflow-hidden relative shadow-lg">
+                                        <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-gray-800 to-gray-700 overflow-hidden relative shadow-lg">
                                             {score.games.thumbnail_url ? (
                                                 <img
                                                     src={score.games.thumbnail_url}
@@ -155,7 +148,7 @@ export default async function ProfilePage() {
                                             )}
                                         </div>
                                         <div>
-                                            <h3 className="font-bold text-lg group-hover:text-purple-400 transition-colors">
+                                            <h3 className="font-bold text-lg group-hover:text-[#ffd700] transition-colors">
                                                 {score.games.title}
                                             </h3>
                                             <div className="flex items-center space-x-4 text-sm text-gray-400">
@@ -171,9 +164,10 @@ export default async function ProfilePage() {
                                 <p className="text-gray-400 mb-4">You haven't played any games yet.</p>
                                 <Link
                                     href="/games"
-                                    className="px-6 py-2 rounded-full bg-white text-black font-bold hover:bg-gray-200 transition-colors inline-block"
+                                    className="px-6 py-3 rounded-full bg-gradient-to-r from-[#ff9500] to-[#ffd700] text-black font-bold hover:shadow-glow-gold transition-all inline-flex items-center space-x-2"
                                 >
-                                    Start Playing
+                                    <Gamepad2 className="w-5 h-5" />
+                                    <span>Start Playing</span>
                                 </Link>
                             </div>
                         )}

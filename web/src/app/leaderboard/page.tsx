@@ -54,11 +54,11 @@ export default async function LeaderboardPage() {
                     <div className="space-y-16">
                         {Object.entries(scoresByGame).map(([gameTitle, scores]: [string, any]) => (
                             <div key={gameTitle} className="glass rounded-3xl p-8 overflow-hidden relative">
-                                <div className="absolute top-0 right-0 p-32 bg-purple-500/10 blur-[100px] rounded-full pointer-events-none" />
+                                <div className="absolute top-0 right-0 p-32 bg-[#ff9500]/10 blur-[100px] rounded-full pointer-events-none" />
 
                                 <div className="flex items-center space-x-4 mb-8">
-                                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-purple-500/20">
-                                        <Trophy className="w-6 h-6 text-white" />
+                                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ff9500] to-[#ffd700] flex items-center justify-center shadow-lg shadow-[#ffd700]/20">
+                                        <Trophy className="w-6 h-6 text-black" />
                                     </div>
                                     <h2 className="text-3xl font-bold text-white">{gameTitle}</h2>
                                 </div>
@@ -106,7 +106,7 @@ export default async function LeaderboardPage() {
                                                                     )}
                                                                 </div>
                                                                 <div className="flex flex-col">
-                                                                    <span className="font-medium text-white group-hover:text-purple-300 transition-colors">
+                                                                    <span className="font-medium text-white group-hover:text-[#ffd700] transition-colors">
                                                                         {entry.display_name || entry.username || 'Anonymous'}
                                                                     </span>
                                                                     <span className="text-xs text-gray-500">
@@ -116,7 +116,7 @@ export default async function LeaderboardPage() {
                                                             </div>
                                                         </td>
                                                         <td className="px-6 py-4 text-right">
-                                                            <span className="font-mono font-bold text-lg text-purple-400">
+                                                            <span className="font-mono font-bold text-lg text-[#ffd700]">
                                                                 {entry.score.toLocaleString()}
                                                             </span>
                                                         </td>

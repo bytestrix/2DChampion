@@ -65,6 +65,13 @@ next-env.d.ts
 .branches
 .temp
 
+# Database & Security - DO NOT COMMIT
+*.sql
+schema/
+migrations/
+database/
+**/database-schema/
+
 # OS
 Thumbs.db
 

@@ -60,7 +60,7 @@ export default function LoginPage() {
         <div className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
             {/* Animated Background */}
             <div className="absolute inset-0 -z-10">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-float" />
+                <div className="absolute top-20 left-10 w-72 h-72 bg-[#ff9500]/20 rounded-full blur-3xl animate-float" />
                 <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
             </div>
 
@@ -105,7 +105,7 @@ export default function LoginPage() {
                                         type="text"
                                         value={username}
                                         onChange={(e) => setUsername(e.target.value)}
-                                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-[#1a1a24] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+                                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-[#1a1a24] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#ffd700] transition-colors"
                                         placeholder="Choose a username"
                                         required={!isLogin}
                                     />
@@ -123,7 +123,7 @@ export default function LoginPage() {
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full pl-12 pr-4 py-3 rounded-xl bg-[#1a1a24] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+                                    className="w-full pl-12 pr-4 py-3 rounded-xl bg-[#1a1a24] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#ffd700] transition-colors"
                                     placeholder="your@email.com"
                                     required
                                 />
@@ -140,7 +140,7 @@ export default function LoginPage() {
                                     type="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full pl-12 pr-4 py-3 rounded-xl bg-[#1a1a24] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+                                    className="w-full pl-12 pr-4 py-3 rounded-xl bg-[#1a1a24] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#ffd700] transition-colors"
                                     placeholder="••••••••"
                                     required
                                 />
@@ -166,7 +166,7 @@ export default function LoginPage() {
                             className="text-gray-400 hover:text-white transition-colors"
                         >
                             {isLogin ? "Don't have an account? " : 'Already have an account? '}
-                            <span className="text-purple-400 font-semibold">
+                            <span className="text-[#ffd700] font-semibold">
                                 {isLogin ? 'Sign Up' : 'Sign In'}
                             </span>
                         </button>
@@ -175,7 +175,7 @@ export default function LoginPage() {
 
                 <p className="text-center text-sm text-gray-500 mt-6">
                     By continuing, you agree to our{' '}
-                    <Link href="/terms" className="text-purple-400 hover:underline">
+                    <Link href="/terms" className="text-[#ffd700] hover:underline">
                         Terms of Service
                     </Link>
                 </p>

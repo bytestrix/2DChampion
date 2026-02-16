@@ -1,11 +1,13 @@
 
 import { createServerClient } from '@/lib/supabase/server'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PixelPythonGame from '../../../components/games/PixelPythonGame'
 import HighwayHeroGame from '../../../components/games/HighwayHeroGame'
 import GameLeaderboard from '../../../components/GameLeaderboard'
+import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
 
 interface GamePageProps {
     params: Promise<{
@@ -16,6 +18,13 @@ interface GamePageProps {
 export default async function GamePage({ params }: GamePageProps) {
     const supabase = await createServerClient()
     const { slug } = await params
+
+    // Check authentication - redirect to login if not authenticated
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+        redirect(`/login?redirect=/games/${slug}`)
+    }
 
     // Fetch game details
     let { data: game, error } = await supabase
@@ -50,46 +59,52 @@ export default async function GamePage({ params }: GamePageProps) {
         notFound()
     }
 
-    // Increment play count (server action or just here if possible, but GET requests shouldn't mutate strictly speaking. 
-    // Ideally user interaction starts the game and increments count. failing that, we can do it here but let's skip for now to avoid side-effects on render)
-
-    const { data: { user } } = await supabase.auth.getUser()
-
-
-
     return (
         <>
             <Navbar />
-            <main className="min-h-screen pt-24 pb-12 px-4 sm:px-6 flex flex-col">
-                <div className="container mx-auto max-w-7xl flex-1 flex flex-col">
-                    <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-black mb-2">
+            <main className="min-h-screen pt-20 sm:pt-24 pb-12 px-4 sm:px-6">
+                <div className="container mx-auto max-w-7xl">
+                    {/* Header with Back Button */}
+                    <div className="mb-6 sm:mb-8">
+                        <Link
+                            href="/games"
+                            className="inline-flex items-center space-x-2 text-gray-400 hover:text-[#ffd700] transition-colors mb-4 group"
+                        >
+                            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                            <span className="font-medium">Back to Games</span>
+                        </Link>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-2">
                             {game.title}
                         </h1>
-                        <p className="text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-gray-400 max-w-2xl">
                             {game.description}
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    {/* Game Layout - Responsive Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
                         {/* Game Area */}
-                        <div className="lg:col-span-3 flex justify-center items-center bg-black/40 rounded-3xl overflow-hidden border border-white/10 shadow-2xl backdrop-blur-sm relative min-h-[600px]">
-                            {/* Render Game Component Based on Slug */}
-                            {slug === 'pixel-python' ? (
-                                <PixelPythonGame gameId={game.id} userId={user?.id} />
-                            ) : slug === 'highway-hero' ? (
-                                <HighwayHeroGame gameId={game.id} userId={user?.id} />
-                            ) : (
-                                <div className="text-center p-12">
-                                    <h3 className="text-2xl font-bold text-white mb-4">Game Not Implemented Yet</h3>
-                                    <p className="text-gray-400">The game "{game.title}" is listed but the component is missing.</p>
-                                </div>
-                            )}
+                        <div className="lg:col-span-3 order-1 lg:order-1">
+                            <div className="flex justify-center items-center bg-black/40 rounded-3xl overflow-hidden border border-white/10 shadow-2xl backdrop-blur-sm relative min-h-[400px] sm:min-h-[600px]">
+                                {/* Render Game Component Based on Slug */}
+                                {slug === 'pixel-python' ? (
+                                    <PixelPythonGame gameId={game.id} userId={user?.id} />
+                                ) : slug === 'highway-hero' ? (
+                                    <HighwayHeroGame gameId={game.id} userId={user?.id} />
+                                ) : (
+                                    <div className="text-center p-12">
+                                        <h3 className="text-2xl font-bold text-white mb-4">Game Not Implemented Yet</h3>
+                                        <p className="text-gray-400">The game "{game.title}" is listed but the component is missing.</p>
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
-                        {/* Side Leaderboard */}
-                        <div className="lg:col-span-1">
-                            <GameLeaderboard gameId={game.id} gameTitle={game.title} />
+                        {/* Side Leaderboard - Scrollable on Mobile */}
+                        <div className="lg:col-span-1 order-2 lg:order-2">
+                            <div className="lg:sticky lg:top-24">
+                                <GameLeaderboard gameId={game.id} gameTitle={game.title} />
+                            </div>
                         </div>
                     </div>
                 </div>

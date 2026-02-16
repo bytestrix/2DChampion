@@ -374,13 +374,21 @@ export default function HighwayHeroGame({ gameId, userId }: HighwayHeroGameProps
                     <p className="text-gray-400 mb-8 text-xl">
                         Final Score: <span className="text-blue-400 font-bold">{score}</span>
                     </p>
-                    <button
-                        onClick={initGame}
-                        className="group px-8 py-3 bg-white text-black font-bold text-lg rounded-full hover:bg-gray-200 transition-all hover:scale-105 active:scale-95 flex items-center space-x-2"
-                    >
-                        <RotateCcw className="w-5 h-5" />
-                        <span>Race Again</span>
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                        <button
+                            onClick={initGame}
+                            className="group px-8 py-3 bg-gradient-to-r from-[#ff9500] to-[#ffd700] text-black font-bold text-lg rounded-full hover:shadow-glow-gold transition-all hover:scale-105 active:scale-95 flex items-center space-x-2"
+                        >
+                            <RotateCcw className="w-5 h-5" />
+                            <span>Race Again</span>
+                        </button>
+                        <a
+                            href="/games"
+                            className="group px-8 py-3 glass text-white font-bold text-lg rounded-full hover:bg-white/10 transition-all hover:scale-105 active:scale-95 flex items-center space-x-2 border border-[#00d4ff]/30"
+                        >
+                            <span>Back to Games</span>
+                        </a>
+                    </div>
                 </div>
             )}
         </div>

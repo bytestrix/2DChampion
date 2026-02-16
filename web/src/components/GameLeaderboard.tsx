@@ -80,13 +80,13 @@ export default function GameLeaderboard({ gameId, gameTitle }: GameLeaderboardPr
                                 </div>
 
                                 <div className="flex flex-col">
-                                    <span className="text-sm font-medium text-white group-hover:text-purple-300 transition-colors truncate max-w-[100px]">
+                                    <span className="text-sm font-medium text-white group-hover:text-[#ffd700] transition-colors truncate max-w-[100px]">
                                         {entry.display_name || entry.username || 'Anonymous'}
                                     </span>
                                 </div>
                             </div>
 
-                            <span className="font-mono font-bold text-purple-400 text-sm">
+                            <span className="font-mono font-bold text-[#ffd700] text-sm">
                                 {entry.score.toLocaleString()}
                             </span>
                         </div>

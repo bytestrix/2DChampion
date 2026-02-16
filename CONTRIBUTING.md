@@ -179,7 +179,7 @@ Before submitting, ensure:
 
 1. **Fork the repository**
    ```bash
-   git fork https://github.com/rishibaghel25/2DChampion
+   git fork https://github.com/bytestrix/2DChampion
    ```
 
 2. **Create a feature branch**
@@ -218,7 +218,7 @@ Before submitting, ensure:
 
 ### Found a Bug?
 
-1. Check if the bug is already reported in [Issues](https://github.com/rishibaghel25/2DChampion/issues)
+1. Check if the bug is already reported in [Issues](https://github.com/bytestrix/2DChampion/issues)
 2. If not, create a new issue with:
    - Clear title
    - Steps to reproduce
@@ -228,7 +228,7 @@ Before submitting, ensure:
 
 ### Want to Suggest a Feature?
 
-1. Check [Discussions](https://github.com/rishibaghel25/2DChampion/discussions) for similar ideas
+1. Check [Discussions](https://github.com/bytestrix/2DChampion/discussions) for similar ideas
 2. Create a new discussion explaining:
    - What problem does it solve?
    - How would it work?
@@ -277,7 +277,7 @@ git clone https://github.com/YOUR_USERNAME/2DChampion.git
 cd 2DChampion
 
 # 2. Add upstream remote
-git remote add upstream https://github.com/rishibaghel25/2DChampion.git
+git remote add upstream https://github.com/bytestrix/2DChampion.git
 
 # 3. Install dependencies
 cd web
@@ -310,7 +310,7 @@ git push origin main
 
 If you have any questions, feel free to:
 
-- Open a [Discussion](https://github.com/rishibaghel25/2DChampion/discussions)
+- Open a [Discussion](https://github.com/bytestrix/2DChampion/discussions)
 - Comment on an existing issue
 - Reach out to maintainers
 

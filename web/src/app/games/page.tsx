@@ -25,8 +25,8 @@ export default async function GamesPage() {
                 <div className="container mx-auto max-w-7xl">
                     {/* Header */}
                     <div className="text-center mb-12 sm:mb-16">
-                        <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-full glass mb-4 sm:mb-6">
-                            <Gamepad2 className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
+                        <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-full glass mb-4 sm:mb-6 border border-[#ffd700]/30">
+                            <Gamepad2 className="w-3 h-3 sm:w-4 sm:h-4 text-[#ff9500]" />
                             <span className="text-xs sm:text-sm text-gray-300">Available Games</span>
                         </div>
 
@@ -46,10 +46,10 @@ export default async function GamesPage() {
                                 <Link
                                     key={game.id}
                                     href={`/games/${game.slug}`}
-                                    className="group glass rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300 hover:scale-105"
+                                    className="group glass rounded-2xl overflow-hidden hover:bg-white/5 border border-[#ff9500]/20 hover:border-[#ffd700]/50 transition-all duration-300 hover:scale-105"
                                 >
                                     {/* Game Thumbnail */}
-                                    <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-pink-500/20 relative overflow-hidden">
+                                    <div className="aspect-video bg-gradient-to-br from-[#ff9500]/20 to-[#ffd700]/20 relative overflow-hidden">
                                         {game.thumbnail_url ? (
                                             <img
                                                 src={game.thumbnail_url}
@@ -73,7 +73,7 @@ export default async function GamesPage() {
 
                                     {/* Game Info */}
                                     <div className="p-4 sm:p-6">
-                                        <h3 className="text-xl sm:text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">
+                                        <h3 className="text-xl sm:text-2xl font-bold mb-2 group-hover:text-[#ffd700] transition-colors">
                                             {game.title}
                                         </h3>
                                         <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4 line-clamp-2">
@@ -86,7 +86,7 @@ export default async function GamesPage() {
                                                 <span>{game.play_count || 0} plays</span>
                                             </div>
 
-                                            <span className="text-sm sm:text-base text-purple-400 font-semibold group-hover:translate-x-2 transition-transform">
+                                            <span className="text-sm sm:text-base text-[#ff9500] group-hover:text-[#ffd700] font-semibold group-hover:translate-x-2 transition-all">
                                                 Play →
                                             </span>
                                         </div>
@@ -103,9 +103,9 @@ export default async function GamesPage() {
                                     {error ? error.message : 'Be the first to contribute a game to the platform!'}
                                 </p>
                                 <Link
-                                    href="https://github.com/rishibaghel25/2DChampion"
+                                    href="https://github.com/bytestrix/2DChampion"
                                     target="_blank"
-                                    className="inline-block px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-[#6366f1] to-[#ec4899] text-white font-bold text-sm sm:text-base hover:shadow-glow transition-all"
+                                    className="inline-block px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-[#ff9500] to-[#ffd700] text-black font-bold text-sm sm:text-base hover:shadow-glow-gold transition-all"
                                 >
                                     Contribute a Game
                                 </Link>
@@ -130,9 +130,9 @@ export default async function GamesPage() {
                                 Read Documentation
                             </Link>
                             <Link
-                                href="https://github.com/rishibaghel25/2DChampion"
+                                href="https://github.com/bytestrix/2DChampion"
                                 target="_blank"
-                                className="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-[#6366f1] to-[#ec4899] text-white font-bold text-sm sm:text-base hover:shadow-glow transition-all"
+                                className="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-[#ff9500] to-[#ffd700] text-black font-bold text-sm sm:text-base hover:shadow-glow-gold transition-all"
                             >
                                 View on GitHub
                             </Link>
