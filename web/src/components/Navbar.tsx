@@ -27,6 +27,12 @@ export default async function Navbar() {
                             Games
                         </Link>
                         <Link
+                            href="/docs"
+                            className="text-base text-gray-300 hover:text-[#ffd700] transition-colors duration-300 font-medium"
+                        >
+                            Docs
+                        </Link>
+                        <Link
                             href="/leaderboard"
                             className="text-base text-gray-300 hover:text-[#ffd700] transition-colors duration-300 font-medium"
                         >

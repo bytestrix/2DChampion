@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, Home, Gamepad2, Trophy, User, LogIn } from 'lucide-react'
+import { Menu, X, Home, Gamepad2, Trophy, User, LogIn, Book } from 'lucide-react'
 
 interface MobileMenuProps {
     isAuthenticated: boolean
@@ -68,6 +68,14 @@ export default function MobileMenu({ isAuthenticated }: MobileMenuProps) {
                                 >
                                     <Gamepad2 className="w-5 h-5" />
                                     <span className="font-medium">Games</span>
+                                </Link>
+                                <Link
+                                    href="/docs"
+                                    onClick={closeMenu}
+                                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-colors text-gray-300 hover:text-[#ffd700]"
+                                >
+                                    <Book className="w-5 h-5" />
+                                    <span className="font-medium">Docs</span>
                                 </Link>
                                 <Link
                                     href="/leaderboard"

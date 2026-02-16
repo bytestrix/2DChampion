@@ -150,7 +150,7 @@ export default function LoginPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3 rounded-xl bg-gradient-to-r from-[#6366f1] to-[#ec4899] text-white font-bold hover:shadow-glow transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full py-3 rounded-xl bg-gradient-to-r from-[#ff9500] to-[#ffd700] text-black font-bold hover:shadow-glow-gold transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             <span>{loading ? 'Loading...' : (isLogin ? 'Sign In' : 'Create Account')}</span>
                             <ArrowRight className="w-5 h-5" />

@@ -51,9 +51,9 @@ export default async function Home() {
                 <Image
                   src="/logo.png"
                   alt="2D Champion"
-                  width={500}
-                  height={200}
-                  className="w-full max-w-sm lg:max-w-md xl:max-w-lg animate-float drop-shadow-[0_0_40px_rgba(255,215,0,0.3)]"
+                  width={700}
+                  height={280}
+                  className="w-full max-w-md lg:max-w-lg xl:max-w-xl animate-float drop-shadow-[0_0_40px_rgba(255,215,0,0.3)]"
                   priority
                 />
               </div>
