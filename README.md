@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./2dchampion_logo.png" alt="2D Champion" width="400">
+  <img src="web/public/2dchampion-banner.png" alt="2D Champion Banner" width="100%">
 </p>
 
 # 🎮 2D Champion
