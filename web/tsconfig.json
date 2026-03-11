@@ -28,6 +28,15 @@
       ],
       "@games/*": [
         "../games/*"
+      ],
+      "lucide-react": [
+        "./node_modules/lucide-react"
+      ],
+      "react": [
+        "./node_modules/@types/react"
+      ],
+      "react-dom": [
+        "./node_modules/@types/react-dom"
       ]
     }
   },
