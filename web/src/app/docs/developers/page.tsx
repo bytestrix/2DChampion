@@ -154,7 +154,7 @@ export default function DevelopersDocsPage() {
                             <div className="glass p-8 rounded-2xl border border-white/10">
                                 <h3 className="text-xl font-bold mb-4 text-[#ffd700]">Basic Game Template</h3>
                                 <p className="text-gray-300 mb-4">
-                                    Games should be created as React components in <code className="text-sm bg-black/50 px-2 py-1 rounded">web/src/components/games/</code>
+                                    Games should be created as React components in their own subfolder within <code className="text-sm bg-black/50 px-2 py-1 rounded">games/</code>, e.g., <code className="text-sm bg-black/50 px-2 py-1 rounded">games/your-game/YourGame.tsx</code>
                                 </p>
                                 <code className="text-sm bg-black/50 px-4 py-3 rounded block text-gray-300 overflow-x-auto">
                                     {`'use client'

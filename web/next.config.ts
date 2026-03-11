@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   images: {
@@ -10,6 +11,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    externalDir: true,
+  },
+  webpack: (config) => {
+    config.resolve.modules.push(path.resolve('./node_modules'));
+    return config;
+  },
+  turbopack: {},
 };
 
 export default nextConfig;

@@ -13,7 +13,7 @@
   "homepage": "https://github.com/bytestrix/2DChampion#readme",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint"
   },

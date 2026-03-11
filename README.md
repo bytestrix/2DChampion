@@ -107,9 +107,9 @@ npm run dev
 - **Real-time**: Supabase Realtime (for leaderboards)
 
 ### Games
-- **Technologies**: HTML5, CSS3, TypeScript/JavaScript
+- **Technologies**: Next.js (React), Tailwind CSS, TypeScript, Supabase
 - **Canvas API** for game rendering
-- **No heavy frameworks** - keep games lightweight!
+- **No heavy game frameworks** - keep games lightweight!
 
 ## 🤝 Contributing
 
@@ -121,7 +121,7 @@ We welcome contributions from developers of all skill levels! Here's how you can
 
 1. **Propose Your Idea** - Create a [GitHub Issue](https://github.com/bytestrix/2DChampion/issues) describing your game
 2. **Fork the Repository** - Clone and create your game component
-3. **Build Your Game** - Develop in `web/src/components/games/YourGame.tsx`
+3. **Build Your Game** - Develop in a new subfolder: `games/your-game-name/YourGame.tsx`
    - Use the existing game components as templates
    - Implement scoring, controls, and game logic
    - Test locally (game works without database connection)
@@ -167,14 +167,6 @@ See [SECURITY.md](SECURITY.md) for more details on the separation between contri
 - Supabase's anon key is safe for frontend use
 - Authentication handled securely by Supabase Auth
 
-### Environment Variables
-
-The following environment variables are **safe to commit** (public):
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-
-**Never commit**:
-- `SUPABASE_SERVICE_ROLE_KEY` (keep in Vercel/deployment environment only)
 
 ## 🌟 Community
 
@@ -208,7 +200,7 @@ This project is licensed under the **GNU General Public License v3.0** - see the
 - [x] Game listing and playing
 - [x] Leaderboard system
 - [x] User profiles with stats
-- [ ] Game rating and reviews
+- [ ] Game rating and reviews`
 - [ ] Achievements and badges
 - [ ] Multi-player support
 - [ ] Game tournaments
